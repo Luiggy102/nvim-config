@@ -46,12 +46,14 @@ return {
     },
 
     -- Ide
-    { 'https://github.com/nvim-lualine/lualine.nvim', opts = { theme = 'iceber_dark' } },
-    { "lukas-reineke/indent-blankline.nvim",          main = "ibl",                    opts = {}, },
-    { "nvim-treesitter/nvim-treesitter",              build = ":TSUpdate", },
-    { 'numToStr/Comment.nvim',                        lazy = false,                    opts = {} },
-    { 'akinsho/toggleterm.nvim',                      version = "*",                   config = true },
-    { 'stevearc/dressing.nvim',                       opts = {}, },
+    { 'akinsho/toggleterm.nvim',             version = "*",                   config = true },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                    opts = {}, },
+    { 'numToStr/Comment.nvim',               lazy = false,                    opts = {} },
+    { 'nvim-lualine/lualine.nvim',           opts = { theme = 'iceber_dark' } },
+    { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate", },
+    { 'stevearc/dressing.nvim',              opts = {}, },
+    { 'lewis6991/gitsigns.nvim',             opts = {} },
+    { 'karb94/neoscroll.nvim',               opts = {} },
     {
         'nvimdev/lspsaga.nvim',
         dependencies = {
@@ -59,9 +61,17 @@ return {
             'nvim-tree/nvim-web-devicons',
         },
     },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {},
+    },
     'windwp/nvim-autopairs',
     'romgrk/barbar.nvim',
-    {'karb94/neoscroll.nvim', opts = {} },
 
     -- navegacion
     { 'nvim-telescope/telescope.nvim', tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim', }, },

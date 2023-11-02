@@ -29,7 +29,7 @@ local kind_icons = {
 }
 return {
     require("luasnip.loaders.from_vscode").lazy_load({
-        paths = { "/home/ludwig/.local/share/nvim/lazy/friendly-snippets/" } }),
+        paths = { string.format("%s/.local/share/nvim/lazy/friendly-snippets/", os.getenv("HOME")) } }),
     vim.keymap.set({ "i" }, "<C-K>", function() require('luasnip').expand() end, { silent = true }),
     vim.keymap.set({ "i", "s" }, "<C-L>", function() require('luasnip').jump(1) end, { silent = true }),
     vim.keymap.set({ "i", "s" }, "<C-J>", function() require('luasnip').jump(-1) end, { silent = true }),
@@ -46,6 +46,8 @@ return {
             end,
         },
         mapping = cmp.mapping.preset.insert({
+            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+            ['<C-f>'] = cmp.mapping.scroll_docs(4),
             ['<C-Space>'] = cmp.mapping.complete(),
             ['<CR>'] = cmp.mapping.confirm({ select = true }),
         }),
