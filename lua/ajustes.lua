@@ -12,7 +12,7 @@ global.netrw_menu = 0
 
 -- opciones (set)
 -- opcion.spell = true
--- opcion.spelllang = { 'es_Es' }
+opcion.spelllang = { 'es_Es' }
 opcion.completeopt = { "menuone", "noselect" }
 opcion.showmode = true
 opcion.clipboard = "unnamedplus"
