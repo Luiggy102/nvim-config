@@ -12,6 +12,8 @@
   "cmp-spell": { "branch": "master", "commit": "32a0867efa59b43edbb2db67b0871cfad90c9b66" },
   "cmp-vimtex": { "branch": "master", "commit": "a1f9ada249d8675cd81db5045615ea85f3c88bbb" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
+  "code-shot.nvim": { "branch": "main", "commit": "cd854d56833fe4a77e00dc246a32cefc6330c604" },
+  "core.nvim": { "branch": "main", "commit": "e6aeba879abb3026db26eca863858e3801c87e94" },
   "dressing.nvim": { "branch": "master", "commit": "1f2d1206a03bd3add8aedf6251e4534611de577f" },
   "friendly-snippets": { "branch": "main", "commit": "43727c2ff84240e55d4069ec3e6158d74cb534b6" },
   "gitsigns.nvim": { "branch": "main", "commit": "af0f583cd35286dd6f0e3ed52622728703237e50" },
