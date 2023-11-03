@@ -53,6 +53,7 @@ return {
     { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate", },
     { 'stevearc/dressing.nvim',              opts = {}, },
     { 'lewis6991/gitsigns.nvim',             opts = {} },
+    { 'tpope/vim-fugitive' },
     { 'karb94/neoscroll.nvim',               opts = {} },
     {
         'nvimdev/lspsaga.nvim',

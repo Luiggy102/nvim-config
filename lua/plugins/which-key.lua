@@ -22,19 +22,32 @@ return {
             },
             b = {
                 name = "buffer (pestañas)",
-                p = {":BufferMovePrevious<cr>", "mover a la izquierda"},
-                n = {":BufferMoveNext<cr>", "mover a la derecha"},
-                f = {":BufferPin<cr>", "fijar"},
-                d = {":BufferOrderByDirectory<CR>", "ordenar por directorio"},
-                l = {":BufferOrderByLanguage<CR>", "ordenar por lenguage"},
+                p = { ":BufferMovePrevious<cr>", "mover a la izquierda" },
+                n = { ":BufferMoveNext<cr>", "mover a la derecha" },
+                f = { ":BufferPin<cr>", "fijar" },
+                d = { ":BufferOrderByDirectory<CR>", "ordenar por directorio" },
+                l = { ":BufferOrderByLanguage<CR>", "ordenar por lenguage" },
             },
             g = {
                 name = "git",
-                p = {":Gitsigns prev_hunk<cr>", "cambio anterior"},
-                n = {":Gitsigns next_hunk<cr>", "siguiente cambio"},
-                v = {":Gitsigns preview_hunk<cr>", "previsualizar cambio"},
-                b = {":Gitsigns blame_line<cr>", "ver quien realizó cambio en esa línea"},
-                r = {":Gitsigns reset_hunk<cr>", "revertir cambio"},
+                -- gitsigns
+                h = {
+                    name = "hunk (cambios)",
+                    p = { ":Gitsigns prev_hunk<cr>", "cambio anterior" },
+                    n = { ":Gitsigns next_hunk<cr>", "siguiente cambio" },
+                    v = { ":Gitsigns preview_hunk<cr>", "previsualizar cambio" },
+                    r = { ":Gitsigns reset_hunk<cr>", "revertir cambio" },
+                },
+                b = { ":Gitsigns blame_line<cr>", "ver quien realizó cambio en esa línea" },
+                -- vim fugitive
+                s = { ":G status<cr>", "status" },
+                o = { ":G log<cr>", "log" },
+                d = { ":G diff<cr>", "diff" },
+                a = { ":G add .<cr>", "add (todo)" },
+                e = { ":G restore --staged .<cr>", "restore (todo)" },
+                c = { ":G commit<cr>", "commit" },
+                l = { ":G pull origin main<cr>", "pull (origin/maim)" },
+                p = { ":G push origin main<cr>", "push (origin/main)" },
             }
         },
     })
