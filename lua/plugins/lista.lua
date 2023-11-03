@@ -15,7 +15,7 @@ return {
     },
 
     -- autocompletado
-    { 'ziontee113/icon-picker.nvim',         opts = { disable_legacy_commands = true } },
+    { 'ziontee113/icon-picker.nvim', opts = { disable_legacy_commands = true } },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
@@ -46,16 +46,23 @@ return {
     },
 
     -- Ide
-    { 'akinsho/toggleterm.nvim',             version = "*",                            config = true },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                             opts = {}, },
-    { 'numToStr/Comment.nvim',               lazy = false,                             opts = {} },
-    { 'nvim-lualine/lualine.nvim',           opts = { theme = 'iceber_dark' } },
-    { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate", },
-    { 'stevearc/dressing.nvim',              opts = {}, },
-    { 'lewis6991/gitsigns.nvim',             opts = {} },
+    { 'akinsho/toggleterm.nvim',     version = "*",                            config = true },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = { exclude = { filetypes = { "dashboard", }, },
+        },
+    },
+    { 'numToStr/Comment.nvim',           lazy = false,                              opts = {} },
+    { 'nvim-lualine/lualine.nvim',       opts = { theme = 'iceber_dark' } },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", },
+    { 'stevearc/dressing.nvim',          opts = {}, },
+    { 'lewis6991/gitsigns.nvim',         opts = {} },
     { 'tpope/vim-fugitive' },
-    { 'karb94/neoscroll.nvim',               opts = {} },
-    { 'niuiic/code-shot.nvim',               dependencies = { 'niuiic/core.nvim' },    opts = {} },
+    { 'karb94/neoscroll.nvim',           opts = {} },
+    { 'pocco81/auto-save.nvim',          opts = { enable = true } },
+    { 'niuiic/code-shot.nvim',           dependencies = { 'niuiic/core.nvim' },     opts = {} },
+    { 'vuki656/package-info.nvim',       dependencies = { 'MunifTanjim/nui.nvim' }, opts = {} },
     {
         'nvimdev/lspsaga.nvim',
         dependencies = {
@@ -72,9 +79,30 @@ return {
         end,
         opts = {},
     },
+    {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                config = {
+                    week_header = { enable = true, },
+                }
+            }
+        end,
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    },
+    {
+        'ggandor/leap.nvim',
+        dependencies = { 'tpope/vim-repeat' },
+        config = function()
+            require('leap').add_default_mappings()
+        end,
+
+        opts = {},
+    },
     'windwp/nvim-autopairs',
     'romgrk/barbar.nvim',
-    'vuki656/package-info.nvim', -- npm, yarn, etc
+    'folke/zen-mode.nvim',
 
     -- navegacion
     { 'nvim-telescope/telescope.nvim', tag = '0.1.4', dependencies = { 'nvim-lua/plenary.nvim', }, },

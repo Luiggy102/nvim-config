@@ -5,4 +5,5 @@ return {
             -- oldfiles = { theme = "dropdown", }
          },
     },
+    require("telescope").load_extension("package_info")
 }
