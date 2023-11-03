@@ -58,7 +58,6 @@ return {
             { name = 'npm' },
             { name = 'path' },
             { name = 'buffer',    keyword_lenght = 3 },
-            { name = 'treesitter' },
             {
                 name = 'spell',
                 option = {

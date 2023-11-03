@@ -30,7 +30,6 @@ return {
             'hrsh7th/cmp-path',           -- para rutas
             'hrsh7th/cmp-cmdline',        -- para los comandos
             'micangl/cmp-vimtex',         -- para latex
-            'ray-x/cmp-treesitter',       -- para treesitter
             'hrsh7th/cmp-nvim-lua',       -- para lua
             'f3fora/cmp-spell',           -- para español
             'kdheepak/cmp-latex-symbols', -- symbolos latex
