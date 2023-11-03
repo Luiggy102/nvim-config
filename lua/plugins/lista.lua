@@ -15,6 +15,7 @@ return {
     },
 
     -- autocompletado
+    { 'ziontee113/icon-picker.nvim',         opts = { disable_legacy_commands = true } },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
@@ -45,9 +46,9 @@ return {
     },
 
     -- Ide
-    { 'akinsho/toggleterm.nvim',             version = "*",                   config = true },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                    opts = {}, },
-    { 'numToStr/Comment.nvim',               lazy = false,                    opts = {} },
+    { 'akinsho/toggleterm.nvim',             version = "*",                          config = true },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                           opts = {}, },
+    { 'numToStr/Comment.nvim',               lazy = false,                           opts = {} },
     { 'nvim-lualine/lualine.nvim',           opts = { theme = 'iceber_dark' } },
     { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate", },
     { 'stevearc/dressing.nvim',              opts = {}, },

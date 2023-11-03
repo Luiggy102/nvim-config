@@ -48,6 +48,12 @@ return {
                 c = { ":G commit<cr>", "commit" },
                 l = { ":G pull origin main<cr>", "pull (origin/maim)" },
                 p = { ":G push origin main<cr>", "push (origin/main)" },
+            },
+            i = {
+                name = "íconos",
+                i = { ":IconPickerInsert<cr>", "insertar" },
+                n = { ":IconPickerNormal<cr>", "insertar en normal" },
+                y = { ":IconPickerYank<cr>", "copiar" },
             }
         },
     })
