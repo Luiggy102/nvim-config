@@ -53,14 +53,32 @@ return {
         opts = { exclude = { filetypes = { "dashboard", }, },
         },
     },
-    { 'numToStr/Comment.nvim',           lazy = false,                              opts = {} },
+    {
+        'numToStr/Comment.nvim',
+        lazy = false,
+        opts = {
+            toggler = {
+                line = 'gcc',
+                block = 'gbc',
+            },
+            opleader = {
+                line = 'gc',
+                block = 'gb',
+            },
+            extra = {
+                above = 'gcO',
+                below = 'gco',
+                eol = 'gcA',
+            },
+        }
+    },
     { 'nvim-lualine/lualine.nvim',       opts = { theme = 'iceber_dark' } },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", },
     { 'stevearc/dressing.nvim',          opts = {}, },
     { 'lewis6991/gitsigns.nvim',         opts = {} },
     { 'tpope/vim-fugitive' },
     { 'karb94/neoscroll.nvim',           opts = {} },
-    { 'pocco81/auto-save.nvim',          opts = { enable = true } },
+    { 'pocco81/auto-save.nvim',          opts = { enable = false } },
     { 'niuiic/code-shot.nvim',           dependencies = { 'niuiic/core.nvim' },     opts = {} },
     { 'vuki656/package-info.nvim',       dependencies = { 'MunifTanjim/nui.nvim' }, opts = {} },
     {
@@ -99,7 +117,23 @@ return {
         config = function()
             require('dashboard').setup {
                 config = {
-                    week_header = { enable = true, },
+                    theme = 'hyper',
+                    header = { " " },
+                    packages = { enable = false },
+                    footer = {},
+                    shortcut = {
+                        {
+                            icon = ' ',
+                            icon_hl = '@variable',
+                            desc = 'manuales',
+                            group = 'Label',
+                            action = 'Telescope man_pages',
+                            key = 'm',
+                        },
+                    },
+                    project = { enable = true, limit = 5, label = 'Proyectos' },
+                    mru = { limit = 5, label = 'Archivos recientes' },
+                    disable_move = true,
                 }
             }
         end,
