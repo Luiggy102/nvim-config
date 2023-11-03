@@ -21,6 +21,7 @@ opcion.tabstop = 4
 opcion.softtabstop = 4
 opcion.expandtab = true
 opcion.number = true
+-- opcion.relativenumber = true
 opcion.ignorecase = true
 opcion.termguicolors = true
 opcion.wrap = false

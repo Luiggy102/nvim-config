@@ -2,7 +2,7 @@ local wk = require("which-key")
 return {
     wk.register({
         ["<leader>"] = {
-            z = { ":ZenMode<cr>", "modo zen"},
+            z = { ":ZenMode<cr>", "modo zen" },
             f = {
                 name = "files (archivos)",
                 f = { ":Telescope find_files<cr>", "buscar archivo" },
@@ -23,10 +23,10 @@ return {
                 c = { ":lua require('code-shot').shot()<cr>", "tomar captura" },
                 d = {
                     name = "dependencias (node)",
-                    d = { ":lua require('package-info').delete()<cr>", "eliminar dependencia"},
-                    c = { ":lua require('package-info').change_version()<cr>" , "cambiar version"},
-                    i = { ":lua require('package-info').install()<cr>" , "instalar dependencia"},
-                    u = { ":lua require('package-info').update()<cr>" , "actualizar dependencia"},
+                    d = { ":lua require('package-info').delete()<cr>", "eliminar dependencia" },
+                    c = { ":lua require('package-info').change_version()<cr>", "cambiar version" },
+                    i = { ":lua require('package-info').install()<cr>", "instalar dependencia" },
+                    u = { ":lua require('package-info').update()<cr>", "actualizar dependencia" },
                 }
             },
             b = {
@@ -65,5 +65,5 @@ return {
                 y = { ":IconPickerYank<cr>", "copiar" },
             },
         },
-    })
+    }),
 }
