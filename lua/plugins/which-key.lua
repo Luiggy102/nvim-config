@@ -27,6 +27,14 @@ return {
                 f = {":BufferPin<cr>", "fijar"},
                 d = {":BufferOrderByDirectory<CR>", "ordenar por directorio"},
                 l = {":BufferOrderByLanguage<CR>", "ordenar por lenguage"},
+            },
+            g = {
+                name = "git",
+                p = {":Gitsigns prev_hunk<cr>", "cambio anterior"},
+                n = {":Gitsigns next_hunk<cr>", "siguiente cambio"},
+                v = {":Gitsigns preview_hunk<cr>", "previsualizar cambio"},
+                b = {":Gitsigns blame_line<cr>", "ver quien realizó cambio en esa línea"},
+                r = {":Gitsigns reset_hunk<cr>", "revertir cambio"},
             }
         },
     })

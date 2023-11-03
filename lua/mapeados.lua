@@ -5,6 +5,7 @@ mapeado("n", ";", ":")
 mapeado("n", "<C-w>", vim.cmd.w)
 mapeado("n", "<C-q>", vim.cmd.q)
 
+mapeado("n", "<C-n>", ':NvimTreeToggle<cr>')
 -- nvim bar
 local optsBar = { noremap = true, silent = true }
 mapeado('n', 'H', '<Cmd>BufferPrevious<CR>', optsBar)
