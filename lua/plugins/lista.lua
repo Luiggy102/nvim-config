@@ -70,7 +70,7 @@ return {
         opts = { exclude = { filetypes = { "dashboard", }, },
         },
     },
-    { 'numToStr/Comment.nvim',           lazy = false,                              opts = {} },
+    { 'numToStr/Comment.nvim',           lazy = false,        opts = {} },
     {
         'nvim-lualine/lualine.nvim',
         opts = {
@@ -86,8 +86,14 @@ return {
     { 'lewis6991/gitsigns.nvim',         opts = {} },
     { 'tpope/vim-fugitive' },
     { 'karb94/neoscroll.nvim',           opts = {} },
-    { 'niuiic/code-shot.nvim',           dependencies = { 'niuiic/core.nvim' },     opts = {} },
-    { 'vuki656/package-info.nvim',       dependencies = { 'MunifTanjim/nui.nvim' }, opts = {} },
+    {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require("colorizer").setup()
+        end,
+    },
+    { 'niuiic/code-shot.nvim',     dependencies = { 'niuiic/core.nvim' },     opts = {} },
+    { 'vuki656/package-info.nvim', dependencies = { 'MunifTanjim/nui.nvim' }, opts = {} },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
