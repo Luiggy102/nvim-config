@@ -46,6 +46,23 @@ return {
     },
 
     -- Ide
+    -- { 'akinsho/bufferline.nvim',     version = "*",                            dependencies = 'nvim-tree/nvim-web-devicons',                                                                                           opts = {} },
+    {
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+        },
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {
+            auto_hide = true,
+            sidebar_filetypes = {
+                NvimTree = true,
+            },
+        },
+    },
+
+
     { 'akinsho/toggleterm.nvim',     version = "*",                            config = true },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -53,41 +70,24 @@ return {
         opts = { exclude = { filetypes = { "dashboard", }, },
         },
     },
+    { 'numToStr/Comment.nvim',           lazy = false,                              opts = {} },
     {
-        'numToStr/Comment.nvim',
-        lazy = false,
+        'nvim-lualine/lualine.nvim',
         opts = {
-            toggler = {
-                line = 'gcc',
-                block = 'gbc',
-            },
-            opleader = {
-                line = 'gc',
-                block = 'gb',
-            },
-            extra = {
-                above = 'gcO',
-                below = 'gco',
-                eol = 'gcA',
-            },
+            options = {
+                theme = 'gruvbox',
+                section_separators = { left = '', right = '' },
+                component_separators = { left = '', right = '' }
+            }
         }
     },
-    { 'nvim-lualine/lualine.nvim',       opts = { theme = 'iceber_dark' } },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", },
     { 'stevearc/dressing.nvim',          opts = {}, },
     { 'lewis6991/gitsigns.nvim',         opts = {} },
     { 'tpope/vim-fugitive' },
     { 'karb94/neoscroll.nvim',           opts = {} },
-    { 'pocco81/auto-save.nvim',          opts = { enable = false } },
     { 'niuiic/code-shot.nvim',           dependencies = { 'niuiic/core.nvim' },     opts = {} },
     { 'vuki656/package-info.nvim',       dependencies = { 'MunifTanjim/nui.nvim' }, opts = {} },
-    {
-        'nvimdev/lspsaga.nvim',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter',
-            'nvim-tree/nvim-web-devicons',
-        },
-    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -112,34 +112,6 @@ return {
         },
     },
     {
-        'nvimdev/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup {
-                config = {
-                    theme = 'hyper',
-                    header = { " " },
-                    packages = { enable = false },
-                    footer = {},
-                    shortcut = {
-                        {
-                            icon = ' ',
-                            icon_hl = '@variable',
-                            desc = 'manuales',
-                            group = 'Label',
-                            action = 'Telescope man_pages',
-                            key = 'm',
-                        },
-                    },
-                    project = { enable = true, limit = 5, label = 'Proyectos' },
-                    mru = { limit = 5, label = 'Archivos recientes' },
-                    disable_move = true,
-                }
-            }
-        end,
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-    },
-    {
         'ggandor/leap.nvim',
         dependencies = { 'tpope/vim-repeat' },
         config = function()
@@ -149,7 +121,6 @@ return {
         opts = {},
     },
     'windwp/nvim-autopairs',
-    'romgrk/barbar.nvim',
     'folke/zen-mode.nvim',
 
     -- navegacion
@@ -164,14 +135,55 @@ return {
     'alexghergh/nvim-tmux-navigation',
 
     -- esquema de color
+    'ellisonleao/gruvbox.nvim',
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } },
         config = function()
-            vim.cmd([[colorscheme tokyonight-night]])
+            require('dashboard').setup {
+                -- config
+                config = {
+                    theme = 'hyper',
+                    header = { " " },
+                    packages = { enable = false },
+                    footer = {},
+                    shortcut = {
+                        {
+                            icon = ' ',
+                            icon_hl = '@variable',
+                            desc = 'Directorio actual',
+                            group = 'Busqueda',
+                            action = 'Telescope find_files theme=ivy',
+                            key = 'f',
+                        },
+                        {
+                            icon = ' ',
+                            icon_hl = '@variable',
+                            desc = 'manuales',
+                            group = 'Ayuda',
+                            action = 'Telescope man_pages theme=ivy',
+                            key = 'm',
+                        },
+                        {
+                            icon = ' ',
+                            icon_hl = '@variable',
+                            desc = 'Recientes',
+                            group = 'Busqueda',
+                            action = 'Telescope oldfiles theme=ivy',
+                            key = 'h',
+                        },
+                    },
+                    project = {
+                        enable = true,
+                        limit = 5,
+                        label = 'Proyectos',
+                        action = 'Telescope find_files theme=ivy cwd='
+                    },
+                    mru = { limit = 5, label = 'Archivos recientes' },
+                    disable_move = true,
+                }
+            }
         end,
     },
-
 }

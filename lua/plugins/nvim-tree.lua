@@ -6,5 +6,8 @@ return {
         filters = {
             dotfiles = true,
         },
+        renderer = {
+            indent_markers = { enable = false }
+        }
     })
 }

@@ -1,9 +1,12 @@
 local mapeado = vim.keymap.set
 
 -- basicos
-mapeado("n", ";", ":")
+mapeado({"n", "v"}, ";", ":")
 mapeado("n", "<C-w>", vim.cmd.w)
 mapeado("n", "<C-q>", vim.cmd.q)
+mapeado("n", "<leader>w", vim.cmd.w)
+mapeado("n", "<leader>wq", ":wq<cr>")
+mapeado("n", "<leader>q", vim.cmd.q)
 
 mapeado("n", "<C-n>", ':NvimTreeToggle<cr>')
 -- nvim bar
@@ -22,6 +25,3 @@ mapeado('n', '<C-9>', '<Cmd>BufferGoto 9<CR>', optsBar)
 mapeado('n', '<C-0>', '<Cmd>BufferLast<CR>', optsBar)
 mapeado('n', '<C-p>', '<Cmd>BufferPick<CR>', optsBar)
 mapeado('n', '<C-w>', '<Cmd>BufferClose<CR>', optsBar)
-
--- mapeado('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', optsBar)
--- mapeado('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', optsBar)

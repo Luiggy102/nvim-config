@@ -3,6 +3,7 @@ return {
     wk.register({
         ["<leader>"] = {
             z = { ":ZenMode<cr>", "modo zen" },
+            h = { ":Telescope oldfiles<cr>", "historial archivos" },
             f = {
                 name = "files (archivos)",
                 f = { ":Telescope find_files<cr>", "buscar archivo" },
@@ -64,11 +65,16 @@ return {
                 n = { ":IconPickerNormal<cr>", "insertar en normal" },
                 y = { ":IconPickerYank<cr>", "copiar" },
             },
-            -- m = {
-            --     name = "comentar",
-            --     m = { ":normal gcc<cr>", "comentar línea" },
-            --     b = { ":normal gbc<cr>", "comentar bloque" },
-            -- },
+            e = {
+                name = "ejecutar código",
+                n = { ":!node %<cr>", "NodeJS" },
+                t = { ":!ts-node %<cr>", "TypeScript" },
+                r = { ":!Rscript %<cr>", "R" },
+                l = { ":!lua %<cr>", "Lua" },
+                c = { ':w<CR>:!g++ % -o "$(basename -s .cpp %)"<CR>:term {./"$(basename -s .cpp %)"}<cr>', "C++" },
+                p = { ":w<cr>:term {python3 %}<cr>", "Python" },
+                x = { ":w<cr>:!tectonic %<cr>", "Compilar Latex" },
+            },
         },
     }),
 }

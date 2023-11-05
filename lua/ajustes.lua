@@ -3,9 +3,11 @@ local opcion = vim.opt
 local buffer = vim.b
 local global = vim.g
 
--- esquema de color
--- vim.cmd([[colorscheme tokyonight-night]])
+vim.api.nvim_command('set fillchars=eob:\\ ')
 
+-- esquema de color
+
+vim.cmd[[let g:gruvbox_sign_column = 'none']]
 -- Ajustes Globales
 global.mapleader = " "
 global.netrw_menu = 0
@@ -35,9 +37,11 @@ opcion.swapfile = false
 -- opcion.undofile = true
 opcion.updatetime = 300
 opcion.expandtab = true
+opcion.cursorcolumn = false
 opcion.cursorline = true
+opcion.cursorlineopt = "number"
 opcion.numberwidth = 4
-opcion.signcolumn = "yes"
+opcion.signcolumn = "yes" -- columna gruvbox
 opcion.wrap = true
 opcion.linebreak = true
 opcion.scrolloff = 8
